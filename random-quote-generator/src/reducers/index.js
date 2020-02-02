@@ -1,3 +1,7 @@
 import quoteReducer from './quoteReducer';
+import { combineReducers } from 'redux';
 
-export default quoteReducer;
+export default combineReducers({
+    quotes: quoteReducer,
+  });
+  

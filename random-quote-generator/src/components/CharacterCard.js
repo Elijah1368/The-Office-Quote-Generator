@@ -1,59 +1,54 @@
 import React, {Component} from 'react';
+import ReactCardFlip from 'react-card-flip';
 import '../stylesheets/style.css';
 
 export default class CharacterCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-            front: true,
+            isFlipped: false,
+            isHovered: false,
             url: props.image,
             name: props.name
         };
-        
-        this.front = React.createRef();
-        this.back = React.createRef();
+        this.handleClick = this.handleClick.bind(this);
+        this.handleHover = this.handleHover.bind(this);
     }
 
-    
-
+    handleClick(e) {
+        e.preventDefault();
+        this.setState(prevState => (
+            { isFlipped: !prevState.isFlipped }
+        ));
+    }    
+    handleHover(){
+        this.setState(prevState => ({
+            isHovered: !prevState.isHovered
+        }));
+    }
 
     render(){
-        let image = new Image();
-        image.src = this.state.url;
+        let imgClass = "hover";
+        if (!this.state.isHovered || this.state.isFlipped){
+            imgClass = "unhover";
+        } 
         let styles = {
-            width: image.width / 42 + "vw",
-            height: image.height / 42 + "vw"
+            width: 686 / 40 + 'vw',
+            height: 820 / 40 + 'vw'
         };
-       
+        //console.log(`width:${this.state.width} height:${this.state.height}`);
         return (
-
-            <div>
-                <div className='characterImage' ref ={this.front} onClick={this.flip.bind(this)}>
-                    <img alt={this.state.name} src={this.state.url} style={styles}></img>
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+                <div key='front' onClick={this.handleClick} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                    <img className={imgClass} alt={this.state.name} src={this.state.url} style = {styles}></img>
                 </div>
-                <div className='characterQuote' ref ={this.back} onClick={this.flip.bind(this)}>
+                <div id='back' key='back' onClick={this.handleClick}>
                     <h1>Dwight</h1>
                 </div>
-            </div>
+            </ReactCardFlip>
  
         );
     }
-    
-    flip(){
-        if (this.state.front){
-            this.front.current.classList.toggle("flipped");
-            this.back.current.classList.toggle("flipped");
-        } else {
-            this.back.current.classList.toggle("flipped");
-            this.back.current.classList.toggle("flipped");
-        }
 
-        this.setState({
-            front: !this.state.front,
-            url: this.state.url,
-            name: this.state.name
-        })
-       
-    }
 }
 

@@ -1,9 +1,23 @@
 import { FETCH_QUOTES, NEW_QUOTE} from '../constants';
 
-export default function (state = {image: new Image()}, action){
+const initialState = {
+    loading: true,
+    error: false,
+    data: [],
+    character: '',
+    randomNumber: 0,
+};
+
+  
+export default function (state = initialState, action){
+    //console.log(`action.payload: ${action.hi}`);
     switch (action.type){
         case FETCH_QUOTES:
-            return {};
+            return {
+                ...state,
+                loading: false,
+                data: action.payload
+            };
         case NEW_QUOTE:
             return {};
         default:

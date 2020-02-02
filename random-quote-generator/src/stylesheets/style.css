@@ -19,38 +19,24 @@ body {
     grid-gap: 0;
 }
 
-
-
-#card {
-    cursor: pointer;
-}
-
-
-.characterImage { 
+.hover {
     transition: transform .2s;
-    position: absolute;
-    backface-visibility: hidden;
-}
-
-.characterQuote{ 
-    position: absolute;
-    backface-visibility: hidden;
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
-}
-
-.characterImage:hover {
     transform: scale(1.2); 
     z-index: 1;
 }
 
-.flipped {
+.unhover {
     transition: transform .2s;
-    transform: rotateY( 180deg);
+    transform: scale(1); 
+    z-index: 1;
 }
-/*
+#back{
+    border-style: solid;
+    background-color: aquamarine;
+}
 
+
+/*
 
 img {
     position: absolute;
@@ -61,8 +47,6 @@ img:hover {
     transform: scale(1.2); 
     z-index:1;
 }
-
-
 img {
   
     transition: transform .2s;

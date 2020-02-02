@@ -1,23 +1,27 @@
 import {FETCH_QUOTES, NEW_QUOTE, LOAD_ASSETS} from '../constants';
 
 
-export const fetchQuotes = () => dispatch => {
-    fetch(
-        'https://gist.githubusercontent.com/irkreja/5f35dc197c6be4ddc32a45acdd23fcd7/raw/0d9b85d4a9d9da9dc67fa0257df66ed80702ff3a/quotes.json'
-    )
+export const fetchQuotes = (...urls) => dispatch => {
+    let officeQuotes = {};
+    for (let url of urls){
+        fetch(url)
         .then(response => {
-            if (!response.ok) { 
+            if (!response.ok){
                 throw Error(response.statusText);
-            } else {
-                return response.json();
             }
-        }) 
-        .then(data => {
-            dispatch({ type: FETCH_QUOTES, payload: data.quotes });
+            return response.json();
         })
-        .catch(error => {
+        .then(data => {
+            return addQuotes(officeQuotes, data);
+        })
+        .catch(error=> {
             console.log(error);
         })
+        .then(data => {
+            console.log(`data: ${data['Michael Scott']}`);
+            dispatch({type: FETCH_QUOTES, payload: data});
+        });
+    }
 };
 
 export const newQuote = (name) => {
@@ -25,3 +29,25 @@ export const newQuote = (name) => {
         type: NEW_QUOTE
     }
 };
+
+function addQuotes(container, quotes){
+    let result = {container};
+    quotes.map(quote => {
+        let key = nameOrCharacter(quote);
+        if (result.hasOwnProperty(quote[key])){
+            result[quote[key]].push(quote.quote);
+        } else {
+            result[quote[key]] = [quote.quote];
+        }
+    });
+
+    return result
+}
+
+function nameOrCharacter(quote){
+    if (quote.hasOwnProperty('name')){
+        return 'name';
+    } else {
+        return 'character';
+    }
+}
