@@ -29,24 +29,21 @@ export default class CharacterCard extends Component {
 
     render(){
         let imgClass = "hover";
-        if (!this.state.isHovered || this.state.isFlipped){
+        if (!this.state.isHovered){
             imgClass = "unhover";
         } 
-        let styles = {
-            width: 686 / 40 + 'vw',
-            height: 820 / 40 + 'vw'
-        };
-        //console.log(`width:${this.state.width} height:${this.state.height}`);
+    
         return (
-            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-                <div key='front' onClick={this.handleClick} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-                    <img className={imgClass} alt={this.state.name} src={this.state.url} style = {styles}></img>
-                </div>
-                <div id='back' key='back' onClick={this.handleClick}>
-                    <h1>Dwight</h1>
-                </div>
-            </ReactCardFlip>
- 
+            <div className={imgClass}  onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                <ReactCardFlip  isFlipped={this.state.isFlipped} flipDirection="horizontal">
+                    <div key='front' onClick={this.handleClick} >
+                        <img alt={this.state.name} src={this.state.url} id='characterImage'></img>
+                    </div>
+                    <div id='back' key='back' onClick={this.handleClick}>
+                        <h1>Dwight</h1>
+                    </div>
+                </ReactCardFlip>
+            </div>
         );
     }
 
