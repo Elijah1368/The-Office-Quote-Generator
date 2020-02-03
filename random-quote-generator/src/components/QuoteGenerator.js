@@ -20,12 +20,12 @@ export class QuoteGenerator extends Component {
     componentDidMount(){
         this.props.fetchQuotes('https://raw.githubusercontent.com/anderskristo/the-office-quotes/master/src/quotes/all.json', 
         'https://raw.githubusercontent.com/yoscheherazade/the-office-quotes-json/master/quotes.json');
-        console.log(this.props.quotes);
     }
 
     render(){
         return (
-            <div className='wrapper'>
+        <div className= 'wrapper'>
+            <div className='grid'>
                 <CharacterCard name="Andy" image={Andy} />
                 <CharacterCard name="Angela" image={Angela}/>
                 <CharacterCard name="Dwight" image={Dwight}/>
@@ -34,7 +34,8 @@ export class QuoteGenerator extends Component {
                 <CharacterCard name="Michael" image={Michael}/>
                 <CharacterCard name="Pam" image={Pam}/>
                 <CharacterCard name="Stanley" image={Stanley}/>
-         </div> );
+                </div> 
+         </div>);
     }
 }
 
