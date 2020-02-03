@@ -18,6 +18,7 @@ export const fetchQuotes = (...urls) => dispatch => {
             console.log(error);
         })
         .then(data => {
+            console.log(`data: ${data['Michael Scott']}`);
             dispatch({type: FETCH_QUOTES, payload: data});
         });
     }
