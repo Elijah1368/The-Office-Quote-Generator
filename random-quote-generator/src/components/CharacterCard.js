@@ -29,7 +29,7 @@ export default class CharacterCard extends Component {
 
     render(){
         let imgClass = "hover";
-        if (!this.state.isHovered){
+        if (!this.state.isHovered  || this.state.isFlipped){
             imgClass = "unhover";
         } 
     
