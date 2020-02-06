@@ -9,15 +9,16 @@ body {
 	align-items: center;
 	justify-content: center;
     height: 100vh;
-    border-style: solid;
-	overflow: hidden;
+    overflow: hidden;
 }
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    border-style: solid;                                       
-    grid-gap: 0;
+    grid-template-rows: 1fr 1fr;                                    
+    grid-gap: 0px 5px;
+}
+
+.grid div {
 }
 
 
@@ -25,9 +26,7 @@ body {
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        border-style: solid;                                       
-        grid-gap: 0;
+        grid-template-rows: 1fr 1fr 1fr 1fr;                                      
     }
 
     .grid #characterImage {
@@ -45,20 +44,11 @@ body {
     height: 20.5vw;
 }  
 
-.hover {
-    transition: transform .2s;
-    transform: scale(1.2); 
-    z-index: 1;
-}
-
-.unhover {
-    transition: transform .2s;
-    transform: scale(1); 
-}
-
 
 #back{
     border-style: solid;
+    width:50vw;
+    height: 50vh;
     border-color: transparent;
     background-color: aquamarine;
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import '../stylesheets/loading.css';
+import '../stylesheets/loadingScreen.css';
 
-class Loading extends Component {
+export default class Loading extends Component {
     render(){
         return (
             <div className="loading-container">

@@ -1,9 +1,20 @@
-import {FETCH_QUOTES, NEW_QUOTE, LOAD_ASSETS} from '../constants';
+import {FETCH_QUOTES, NEW_QUOTE} from '../constants';
 
 
 export const fetchQuotes = (...urls) => dispatch => {
-    let officeQuotes = {};
+    let promises = [];
     for (let url of urls){
+        promises.push(asyncFetch(url));
+    }
+
+    Promise.all(promises).then((results) =>{
+        let payload = results.reduce((accumulator, val) => Object.assign(accumulator, val));
+        dispatch({type: FETCH_QUOTES, payload});
+    })
+};
+
+function asyncFetch(url){
+    return (
         fetch(url)
         .then(response => {
             if (!response.ok){
@@ -12,16 +23,13 @@ export const fetchQuotes = (...urls) => dispatch => {
             return response.json();
         })
         .then(data => {
-            return addQuotes(officeQuotes, data);
+            return addQuotes({}, data);
         })
         .catch(error=> {
             console.log(error);
         })
-        .then(data => {
-            dispatch({type: FETCH_QUOTES, payload: data});
-        });
-    }
-};
+    );
+}
 
 export const newQuote = (name) => {
     return {
