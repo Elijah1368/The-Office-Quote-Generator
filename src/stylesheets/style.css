@@ -1,0 +1,38 @@
+html, body {
+    background-color: #333;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+   
+}
+
+#menu{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.front{
+    width: 35vw;
+    height: 42vw;    
+}
+
+
+
+.back{
+    background-color: rgb(112, 112, 112);
+    overflow: auto;
+    width: 35vw;
+    height: 42vw;    
+}
+
+
