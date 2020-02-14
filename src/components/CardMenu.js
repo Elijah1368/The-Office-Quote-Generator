@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import '../stylesheets/style.css';
-import { fetchQuotes, getImages, onSelect, newQuote } from '../actions/index';
+import { fetchQuotes, getImages, onSelect} from '../actions/index';
 import QuoteCard from './QuoteCard';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 import LoadingScreen from './LoadingScreen';
@@ -12,7 +12,7 @@ import {ArrowLeft, ArrowRight} from './Arrow';
 
 export class CardMenu extends Component {
     render(){
-        if (this.props.quotes['Andy'].quotes != 0 && this.props.images){
+        if (this.props.quotes && this.props.images){
             return (
             <div id='menu'>
             <ScrollMenu
@@ -34,23 +34,19 @@ export class CardMenu extends Component {
         this.props.images.map(url => {
             let name = extractName(url);
             return (  
-            <div key = {name} onDragStart={(e)=> e.preventDefault()} >
+            <div key = {name} onDragStart={(e)=> e.preventDefault()} className='card'>
                 <ReactCardFlip isFlipped = {this.props.selected === name} infinite = {true}>
                     <div key='front'>
                         <img src = {url} alt = {name} className='front'/>
                     </div>
                     <div key='back'>
-                        <QuoteCard quote = {this.props.quotes[name].current} onClick = {() => {this.props.newQuote(name)}}/>
+                        <QuoteCard quotes = {this.props.quotes[name]} className='back' author={name}/>
                     </div>
                 </ReactCardFlip>
-            </div> )})
+            </div>)})
         );
     }
 
-    newQuote(){
-
-    }
-    
     componentDidMount(){
         this.props.fetchQuotes('https://raw.githubusercontent.com/anderskristo/the-office-quotes/master/src/quotes/all.json', 
         'https://raw.githubusercontent.com/yoscheherazade/the-office-quotes-json/master/quotes.json');
@@ -67,7 +63,6 @@ function extractName(url){
 const mapStateToProps = state => ({
     quotes:         state.quotes.quotes,
     images:         state.images.data,
-    cardsFlipState: state.cards.cardsFlipState,
     selected:       state.cards.key
 });
 
@@ -75,7 +70,6 @@ const mapDispatchToProps = dispatch =>
     bindActionCreators(
         {
             fetchQuotes,
-            newQuote,
             getImages,
             onSelect
         },

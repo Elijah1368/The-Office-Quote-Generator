@@ -9,7 +9,6 @@ export default function (state = initialState, action){
         case 'SELECT':
             return {
                 key: action.payload,
-                cardsFlipState: state.cardsFlipState
             };
         default:
             return state;

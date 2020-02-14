@@ -1,11 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 html, body {
-    background-color: #333;
+    background-color: rgb(255, 255, 255);
     margin: 0;
     height: 100%;
     width: 100%;
     overflow: hidden;
-   
 }
+
+
+/*MENU CONTAINER*/
+
 
 #menu{
     margin: 0;
@@ -17,22 +22,67 @@ html, body {
 }
 
 .scroll-menu-arrow {
-    padding: 20px;
+    padding:10px;
     cursor: pointer;
 }
 
-.front{
+
+/*CARDS*/
+
+.card {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.front {
+    border-radius: 20px;
     width: 35vw;
     height: 42vw;    
 }
-
-
 
 .back{
-    background-color: rgb(112, 112, 112);
-    overflow: auto;
+    background-color: rgb(249, 255, 223);
+    border-radius: 20px;
     width: 35vw;
-    height: 42vw;    
+    height: 42vw;  
+    overflow: auto;  
 }
 
+.quoteBox {
+    text-align: center;
+    font-size: 2vw;
+    font-family: 'Raleway', sans-serif;
+    margin: 3vw;
+}
 
+.quote {
+    text-align: inherit;
+}
+
+.author {
+    margin-right: 5vw;
+    text-align: right;
+}
+
+.buttons{
+    display: flex;
+    position: fixed;
+    bottom: 6%;
+    left: 5%;
+    right: 5%;
+    justify-content: space-around;
+}
+
+.button {
+    text-decoration: none;
+	border: none;
+    border-radius: 5px;
+	color: #fff;
+	background-color:black;
+	outline: none;
+	font-size: 0.85em;
+    padding: 10px 20px 10px 20px;
+    margin: 1px;
+	opacity: 1;
+    cursor: pointer;
+}

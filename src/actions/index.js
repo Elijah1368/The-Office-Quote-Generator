@@ -21,10 +21,6 @@ export const onSelect = (key) => dispatch => {
     dispatch({type: 'SELECT', payload: key});
 }
 
-export const newQuote = (name) => dispatch => {
-    dispatch({type: 'NEW_QUOTE', payload: name});
-}
-
 function dispatchPromises(dispatch, promises){
     Promise.all(promises).then((results) =>{
         let payload = results.reduce((accumulator, val) => Object.assign(accumulator, val));
@@ -60,23 +56,14 @@ function listToObject(quotes){
         let key = nameOrCharacter(quote);
         let property = quote[key].substr(0, quote[key].indexOf(' '));
         if (result.hasOwnProperty(property)){
-            return result[property].quotes.push(quote.quote);
+            return result[property].push(quote.quote);
         } else {
-            return result[property] = {current: "", quotes:[quote.quote]};
+            return result[property] = [quote.quote];
         }
     });
-
-    result = getInitialQuotes(result);
     return {quotes: result};
 }
 
-function getInitialQuotes(quoteObject){
-    let result = {...quoteObject};
-    Object.keys(result).map((key) => {
-        return result[key].current = result[key].quotes[Math.floor(Math.random() * result[key].quotes.length)];
-    });
-    return result;
-}
 
 function nameOrCharacter(quote){
     if (quote.hasOwnProperty('name')){
