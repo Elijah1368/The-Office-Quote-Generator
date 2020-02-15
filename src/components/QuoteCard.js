@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {FacebookShareButton, FacebookIcon} from 'react-share';
 import '../stylesheets/loadingScreen.css';
 
 
@@ -21,7 +22,7 @@ export default class QuoteCard extends Component {
         <div className={this.props.className}>
             <div className='quoteBox'>
                 <div className ='quote' > 
-                    <p dangerouslySetInnerHTML={{ __html: this.state.current }}></p>
+                    <q dangerouslySetInnerHTML={{ __html: this.state.current }}></q>
                     <p className = 'author'>
                     -{this.props.author}
                     </p>

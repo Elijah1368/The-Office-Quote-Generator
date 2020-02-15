@@ -10,6 +10,7 @@ import ReactCardFlip from 'react-card-flip';
 import {ArrowLeft, ArrowRight} from './Arrow';
 
 
+
 export class CardMenu extends Component {
     render(){
         if (this.props.quotes && this.props.images){
@@ -23,6 +24,7 @@ export class CardMenu extends Component {
                 onSelect={this.props.onSelect}
                 scrollToSelected={true}
                 wheel = {false}
+       
                 />
             </div>);
         } else {
