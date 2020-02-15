@@ -38,10 +38,11 @@ html, body {
     border-radius: 20px;
     width: 35vw;
     height: 42vw;    
+    cursor: pointer;
 }
 
 .back{
-    background-color: rgb(249, 255, 223);
+    background-color: rgb(233, 253, 144);
     border-radius: 20px;
     width: 35vw;
     height: 42vw;  
@@ -52,7 +53,8 @@ html, body {
     text-align: center;
     font-size: 2vw;
     font-family: 'Raleway', sans-serif;
-    margin: 3vw;
+    margin: 4vw;
+    margin-top: 6vw;
 }
 
 .quote {
@@ -85,4 +87,8 @@ html, body {
     margin: 1px;
 	opacity: 1;
     cursor: pointer;
+}
+
+.button:hover {
+    
 }

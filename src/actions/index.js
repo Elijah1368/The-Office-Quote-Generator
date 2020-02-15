@@ -12,15 +12,6 @@ export const fetchQuotes = (...urls) => dispatch => {
     dispatchPromises(dispatch, promises);
 };
 
-export const getImages = () => dispatch => {
-    let images = [Andy, Angela, Dwight, Jim, Kelly, Michael, Pam, Stanley];
-    dispatch({type: 'GET_IMAGES', payload: images});
-}
-
-export const onSelect = (key) => dispatch => {
-    dispatch({type: 'SELECT', payload: key});
-}
-
 function dispatchPromises(dispatch, promises){
     Promise.all(promises).then((results) =>{
         let payload = results.reduce((accumulator, val) => Object.assign(accumulator, val));
@@ -71,4 +62,13 @@ function nameOrCharacter(quote){
     } else {
         return 'character';
     }
+}
+
+export const getImages = () => dispatch => {
+    let images = [Andy, Angela, Dwight, Jim, Kelly, Michael, Pam, Stanley];
+    dispatch({type: 'GET_IMAGES', payload: images});
+}
+
+export const onSelect = (key) => dispatch => {
+    dispatch({type: 'SELECT', payload: key});
 }
