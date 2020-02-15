@@ -46,24 +46,27 @@ html, body {
     border-radius: 20px;
     width: 35vw;
     height: 42vw;  
-    overflow: auto;  
+    overflow: hidden;  
 }
 
 .quoteBox {
-    text-align: center;
+    text-align: left;
     font-size: 2vw;
     font-family: 'Raleway', sans-serif;
-    margin: 4vw;
-    margin-top: 6vw;
+    margin: 3vw;
+    margin-top: 2vw;
 }
 
 .quote {
     text-align: inherit;
+    height: 32vw;
+    width: 102%;
+    overflow: auto;
 }
 
 .author {
     margin-right: 5vw;
-    text-align: right;
+    text-align: end;
 }
 
 .buttons{

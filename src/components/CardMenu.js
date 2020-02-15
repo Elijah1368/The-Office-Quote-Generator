@@ -22,6 +22,7 @@ export class CardMenu extends Component {
                 selected={this.props.selected}
                 onSelect={this.props.onSelect}
                 scrollToSelected={true}
+                wheel = {false}
                 />
             </div>);
         } else {

@@ -6,10 +6,13 @@ import Kelly from '../assets/Kelly.png';
 import Michael from '../assets/Michael.png';
 import Pam from '../assets/Pam.png';
 import Stanley from '../assets/Stanley.png';
+import quotes from '../assets/quotes.json';
 
 export const fetchQuotes = (...urls) => dispatch => {
-    let promises = gatherPromises(urls);
-    dispatchPromises(dispatch, promises);
+    //let promises = gatherPromises(urls);
+    //dispatchPromises(dispatch, promises);
+
+    dispatch({type: 'FETCH_QUOTES', payload:{quotes}});
 };
 
 function dispatchPromises(dispatch, promises){
