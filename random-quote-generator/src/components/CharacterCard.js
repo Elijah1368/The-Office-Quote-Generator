@@ -16,16 +16,20 @@ export default class CharacterCard extends Component {
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleHover = this.handleHover.bind(this);
-        this.getStyle = this.getStyle.bind(this);
+        this.getFlipStyle = this.getFlipStyle.bind(this);
+        this.getHoverStyle = this.getHoverStyle.bind(this);
+        this.getZIndex = this.getZIndex.bind(this);
     }
 
-    render(){    
-        return (
-            <div onClick = {this.handleClick} style={this.getStyle()} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-                {this.getCard(this.state.isFlipped, this.state.name, this.state.url, this.state.quote)}
-            </div>
+    render(){
+        return (            
+            <ReactCardFlip  isFlipped={this.state.isFlipped} containerStyle={{...this.getZIndex(), ...this.getFlipStyle()}} flipDirection="horizontal">
+                {this.getFrontCard(this.state.name, this.state.url)}
+                {this.getBackCard(this.state.quote)}
+            </ReactCardFlip>
         );
     }
+
 
     componentDidMount(){
         this.setState(prevState => ({
@@ -33,73 +37,60 @@ export default class CharacterCard extends Component {
             quote: prevState.quotes[Math.floor(Math.random() * prevState.quotes.length)]
         }));
     }
-
+    
     handleClick(e) {
         e.preventDefault();
-        this.setState(prevState => (
-            { isFlipped: !prevState.isFlipped}
-        ));
+        this.setState(prevState => ({ 
+                isFlipped: !prevState.isFlipped
+            }));
     }    
 
     handleHover(){
         this.setState(prevState => ({
-            isHovered: !prevState.isHovered
+            isHovered: !prevState.isHovered,
+            zIndex: -prevState.zIndex
         }));
     }
-    
-    getStyle(){
-        let style = {
-            transition: 'transform .2s'
-        }; 
-        style = this.setStyle(style, this.state.isFlipped, this.state.isHovered, this.state.self);
-        return style;
-    }
 
-    setStyle(style = {}, isFlipped, isHovered, self){
-        if (isFlipped){
-            style = this.setFlipStyle(style, self);
-        } else if (isHovered) {
-            style = this.setHoveredStyle(style);
+    getZIndex(){
+        if (this.state.isHovered || this.state.isFlipped){
+            return {
+                zIndex:1};
         } else {
-            style = this.setUnHoveredStyle(style);
+            return {};
         }
-        return style;
+    }
+    
+    getHoverStyle(){
+        if (this.state.isHovered && !this.state.isFlipped) {
+            return  {
+                transition: 'transform .2s',
+                transform: 'scale(1.2)',
+            }
+        } else {
+            return {
+                transition: 'transform .2s', 
+                transform: 'scale(1)' 
+            }
+        }
     }
 
-    setFlipStyle(style, self){ 
-        return Object.assign(style, {
-            zIndex: '1',
-            position: 'absolute',
-            transform: `translateX(calc(39vw - (${self.left}px))) translateY(calc(41vh - (${self.top}px)))`
-        });
+    getFlipStyle(){
+        if (this.state.isFlipped){
+            return {
+                position: 'absolute',
+                transform: `scale(2)`,
+                animation: 'center 2s forwards'
+            };
+        } else {
+            return {};
+        }
     }
 
-    setHoveredStyle(style){
-        return Object.assign(style, {
-            transition: 'transform .2s',
-            transform: 'scale(1.2)',
-            zIndex: '1'
-        });
-    }
-
-    setUnHoveredStyle(style){
-        return Object.assign(style, { 
-            transform: 'scale(1)' 
-        });
-    }
-
-    getCard(isFlipped, alt, src, quote){
-        return (
-            <ReactCardFlip  isFlipped={isFlipped} flipDirection="horizontal">
-                {this.getFrontCard(alt, src)}
-                {this.getBackCard(quote)}
-            </ReactCardFlip>
-        );
-    }
 
     getFrontCard(alt, src){
         return ( 
-        <div key='front'>
+        <div key='front' onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} style={this.getHoverStyle()} onClick={this.handleClick}>
             <img alt={alt} src={src} id='characterImage'></img>
         </div>
         );
@@ -107,7 +98,7 @@ export default class CharacterCard extends Component {
 
     getBackCard(quote){
         return (
-        <div id='back' key='back'>
+        <div id='back' key='back' onClick={this.handleClick}>
         </div>
         );
     }

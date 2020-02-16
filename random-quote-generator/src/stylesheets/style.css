@@ -14,7 +14,7 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;                                    
+    grid-template-rows: 1fr 1fr;                            
     grid-gap: 0px 5px;
 }
 
@@ -47,9 +47,21 @@ body {
 
 #back{
     border-style: solid;
-    width:50vw;
-    height: 50vh;
+    width: 17.15vw;
+    height: 20.5vw;
     border-color: transparent;
     background-color: aquamarine;
 }
 
+@keyframes center {
+    0%{
+        position: absolute;
+        transform:scale(1)
+    }
+    100%{
+        position: absolute;
+        transform:scale(2);
+        left: 50vw;
+        top: 50vh;
+    }
+}
