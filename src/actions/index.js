@@ -17,8 +17,63 @@ import Toby from '../assets/Toby.png';
 import quotes from '../assets/quotes.json';
 
 export const fetchQuotes = (...urls) => dispatch => {
+    //let promises = gatherPromises(urls);
+    //dispatchPromises(dispatch, promises);
+
     dispatch({type: 'FETCH_QUOTES', payload:{quotes}});
 };
+
+function dispatchPromises(dispatch, promises){
+    Promise.all(promises).then((results) =>{
+        let payload = results.reduce((accumulator, val) => Object.assign(accumulator, val));
+        dispatch({type: 'FETCH_QUOTES', payload});
+    })
+}
+
+function gatherPromises(urls){
+    let promises = [];
+    urls.map((url) => promises.push(asyncFetch(url)));
+    return promises;
+}
+
+function asyncFetch(url){
+    return (
+        fetch(url)
+        .then(response => {
+            if (!response.ok) throw Error(response.statusText);
+            return response.json();
+        })
+        .then(data => {
+            return listToObject(data);
+        })
+        .catch(error=> {
+            console.log(error);
+        })
+    );
+}
+
+function listToObject(quotes){
+    let result = {};
+    quotes.map(quote => {
+        let key = nameOrCharacter(quote);
+        let property = quote[key].substr(0, quote[key].indexOf(' '));
+        if (result.hasOwnProperty(property)){
+            return result[property].push(quote.quote);
+        } else {
+            return result[property] = [quote.quote];
+        }
+    });
+    return {quotes: result};
+}
+
+
+function nameOrCharacter(quote){
+    if (quote.hasOwnProperty('name')){
+        return 'name';
+    } else {
+        return 'character';
+    }
+}
 
 export const getImages = () => dispatch => {
     let images = [Andy, Angela, Dwight, Jim, Kelly, Michael, Pam, Stanley, Creed, Kevin, Meredith, Oscar, Phyllis, Ryan, Toby];

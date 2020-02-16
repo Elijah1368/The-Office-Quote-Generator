@@ -9,8 +9,6 @@ import LoadingScreen from './LoadingScreen';
 import ReactCardFlip from 'react-card-flip';
 import {ArrowLeft, ArrowRight} from './Arrow';
 
-
-
 export class CardMenu extends Component {
     render(){
         if (this.props.quotes && this.props.images){

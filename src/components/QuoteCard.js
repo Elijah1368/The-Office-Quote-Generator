@@ -22,7 +22,7 @@ export default class QuoteCard extends Component {
         <div className={this.props.className}>
             <div className='quoteBox'>
                 <div className ='quote' > 
-                    <q dangerouslySetInnerHTML={{ __html: this.state.current }}></q>
+                    <p dangerouslySetInnerHTML={{ __html: this.state.current }}></p>
                     <p className = 'author'>
                     -{this.props.author}
                     </p>
