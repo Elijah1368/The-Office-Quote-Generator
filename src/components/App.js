@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import store from '../store';
-import QuoteGenerator from './QuoteGenerator';
+import CardMenu from './CardMenu';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <QuoteGenerator />
+        <CardMenu />
       </Provider>
     );
   }
