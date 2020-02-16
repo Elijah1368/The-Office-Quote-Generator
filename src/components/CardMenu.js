@@ -16,15 +16,14 @@ export class CardMenu extends Component {
         if (this.props.quotes && this.props.images){
             return (
             <div id='menu'>
-            <ScrollMenu
-                data={this.getCards()}
-                arrowLeft={ArrowLeft}
-                arrowRight={ArrowRight}
-                selected={this.props.selected}
-                onSelect={this.props.onSelect}
-                scrollToSelected={true}
-                wheel = {false}
-                />
+                <ScrollMenu
+                    data={this.getCards()}
+                    arrowLeft={ArrowLeft}
+                    arrowRight={ArrowRight}
+                    selected={this.props.selected}
+                    onSelect={this.props.onSelect}
+                    scrollToSelected={true}
+                    wheel = {false}/>
             </div>);
         } else {
             return <LoadingScreen />;
@@ -50,8 +49,7 @@ export class CardMenu extends Component {
     }
 
     componentDidMount(){
-        this.props.fetchQuotes('https://raw.githubusercontent.com/anderskristo/the-office-quotes/master/src/quotes/all.json', 
-        'https://raw.githubusercontent.com/yoscheherazade/the-office-quotes-json/master/quotes.json');
+        this.props.fetchQuotes();
         this.props.getImages();
     }
 }
