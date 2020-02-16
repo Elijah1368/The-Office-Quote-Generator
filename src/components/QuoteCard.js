@@ -22,7 +22,7 @@ export default class QuoteCard extends Component {
         <div className={this.props.className}>
             <div className='quoteBox'>
                 <div className ='quote' > 
-                    <p dangerouslySetInnerHTML={{ __html: this.state.current }}></p>
+                    <q dangerouslySetInnerHTML={{ __html: this.state.current }}></q>
                     <p className = 'author'>
                     -{this.props.author}
                     </p>
@@ -49,7 +49,7 @@ export default class QuoteCard extends Component {
                     </div>
 
                     <button
-                    className="button"
+                    className="button newQuote"
                     id="new-quote"
                     onClick={this.newQuote}
                     >
