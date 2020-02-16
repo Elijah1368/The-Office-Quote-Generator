@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FacebookShareButton, FacebookIcon} from 'react-share';
+import {FacebookShareButton, EmailShareButton, TwitterShareButton} from 'react-share';
 import '../stylesheets/loadingScreen.css';
 
 
@@ -29,22 +29,23 @@ export default class QuoteCard extends Component {
                 </div>
                 <div className="buttons ">
                     <div className = "socialMedia">
-                        <a
-                        href=""
-                        className="button fa fa-twitter"
-                        id="tweet-quote"
-                        title="Tweet this quote!"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        />
-                        <a
-                        href=""
-                        className="button fa fa-facebook"
-                        id="tweet-quote"
-                        title="Share this on facebook!"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        />
+                        <EmailShareButton
+                            subject = 'The Office Quotes'
+                            body = {this.stripHtmlTags(this.state.current) + this.props.author}>
+                            <button className="button fa fa-envelope"></button>
+                        </EmailShareButton>
+                        <TwitterShareButton
+                            title = 'The Office Quotes'
+                            via = 'http://localhost:3000/'
+                            hashtags = '#TheOffice'>
+                            <button className="button fa fa-twitter"></button>
+                        </TwitterShareButton>
+                        <FacebookShareButton 
+                            url='http://localhost:3000/'
+                            quote={this.stripHtmlTags(this.state.current) + this.props.author}
+                            hashtag="#TheOffice">
+                            <button className="button fa fa-facebook"></button>
+                        </FacebookShareButton>
                     </div>
 
                     <button
@@ -59,6 +60,10 @@ export default class QuoteCard extends Component {
         </div> );
     }
 
+    stripHtmlTags(text){
+        let plainText = text.replace(/<(.|\n)*?>/g, '');
+        return plainText;
+    }
     newQuote(){
         let newQuote = this.state.quotes[Math.floor(Math.random() * this.state.quotes.length)];
         while (newQuote === this.state.current){

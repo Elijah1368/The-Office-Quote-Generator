@@ -6,6 +6,14 @@ import Kelly from '../assets/Kelly.png';
 import Michael from '../assets/Michael.png';
 import Pam from '../assets/Pam.png';
 import Stanley from '../assets/Stanley.png';
+/*
+import Creed from '../assets/Creed.png';
+import Kevin from '../assets/Kevin.png';
+import Meredith from '../assets/Meredith.png';
+import Oscar from '../assets/Oscar.png';
+import Phyllis from '../assets/Phyllis.png';
+import Ryan from '../assets/Ryan.png';
+import Toby from '../assets/Toby.png';*/
 import quotes from '../assets/quotes.json';
 
 export const fetchQuotes = (...urls) => dispatch => {
@@ -13,6 +21,7 @@ export const fetchQuotes = (...urls) => dispatch => {
 };
 
 export const getImages = () => dispatch => {
+    //let images = [Andy, Angela, Dwight, Jim, Kelly, Michael, Pam, Stanley, Creed, Kevin, Meredith, Oscar, Phyllis, Ryan, Toby];
     let images = [Andy, Angela, Dwight, Jim, Kelly, Michael, Pam, Stanley];
     dispatch({type: 'GET_IMAGES', payload: images});
 }
