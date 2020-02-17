@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/The-Office-Quotes/static/css/main.f0a2b98e.chunk.css",
+    "main.js": "/The-Office-Quotes/static/js/main.554c0f5f.chunk.js",
+    "main.js.map": "/The-Office-Quotes/static/js/main.554c0f5f.chunk.js.map",
+    "runtime-main.js": "/The-Office-Quotes/static/js/runtime-main.bc1b65cc.js",
+    "runtime-main.js.map": "/The-Office-Quotes/static/js/runtime-main.bc1b65cc.js.map",
+    "static/js/2.9dae4ff3.chunk.js": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js",
+    "static/js/2.9dae4ff3.chunk.js.map": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.map",
+    "index.html": "/The-Office-Quotes/index.html",
+    "precache-manifest.6dbd9784f76e3d160ef4feb52918d00d.js": "/The-Office-Quotes/precache-manifest.6dbd9784f76e3d160ef4feb52918d00d.js",
+    "service-worker.js": "/The-Office-Quotes/service-worker.js",
+    "static/css/main.f0a2b98e.chunk.css.map": "/The-Office-Quotes/static/css/main.f0a2b98e.chunk.css.map",
+    "static/js/2.9dae4ff3.chunk.js.LICENSE.txt": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.LICENSE.txt",
+    "static/media/Andy.png": "/The-Office-Quotes/static/media/Andy.b16d7003.png",
+    "static/media/Angela.png": "/The-Office-Quotes/static/media/Angela.3eb0b2b6.png",
+    "static/media/Creed.png": "/The-Office-Quotes/static/media/Creed.ee51db89.png",
+    "static/media/Dwight.png": "/The-Office-Quotes/static/media/Dwight.25c86748.png",
+    "static/media/Jim.png": "/The-Office-Quotes/static/media/Jim.f2533969.png",
+    "static/media/Kelly.png": "/The-Office-Quotes/static/media/Kelly.f2d9b099.png",
+    "static/media/Kevin.png": "/The-Office-Quotes/static/media/Kevin.3e71b695.png",
+    "static/media/Meredith.png": "/The-Office-Quotes/static/media/Meredith.36ce83bd.png",
+    "static/media/Michael.png": "/The-Office-Quotes/static/media/Michael.564d0425.png",
+    "static/media/Oscar.png": "/The-Office-Quotes/static/media/Oscar.0f253e0b.png",
+    "static/media/Pam.png": "/The-Office-Quotes/static/media/Pam.fa8ad773.png",
+    "static/media/Phyllis.png": "/The-Office-Quotes/static/media/Phyllis.038dcc46.png",
+    "static/media/Ryan.png": "/The-Office-Quotes/static/media/Ryan.2f17ef77.png",
+    "static/media/Stanley.png": "/The-Office-Quotes/static/media/Stanley.595788b9.png",
+    "static/media/Toby.png": "/The-Office-Quotes/static/media/Toby.7723fcc2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bc1b65cc.js",
+    "static/js/2.9dae4ff3.chunk.js",
+    "static/css/main.f0a2b98e.chunk.css",
+    "static/js/main.554c0f5f.chunk.js"
+  ]
+}
