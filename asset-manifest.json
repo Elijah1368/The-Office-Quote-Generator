@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/The-Office-Quotes/static/css/main.f0a2b98e.chunk.css",
+    "main.css": "/The-Office-Quotes/static/css/main.53e90d4f.chunk.css",
     "main.js": "/The-Office-Quotes/static/js/main.554c0f5f.chunk.js",
     "main.js.map": "/The-Office-Quotes/static/js/main.554c0f5f.chunk.js.map",
     "runtime-main.js": "/The-Office-Quotes/static/js/runtime-main.bc1b65cc.js",
@@ -8,9 +8,9 @@
     "static/js/2.9dae4ff3.chunk.js": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js",
     "static/js/2.9dae4ff3.chunk.js.map": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.map",
     "index.html": "/The-Office-Quotes/index.html",
-    "precache-manifest.6dbd9784f76e3d160ef4feb52918d00d.js": "/The-Office-Quotes/precache-manifest.6dbd9784f76e3d160ef4feb52918d00d.js",
+    "precache-manifest.d27ece4897046cc7a806baa140aa388c.js": "/The-Office-Quotes/precache-manifest.d27ece4897046cc7a806baa140aa388c.js",
     "service-worker.js": "/The-Office-Quotes/service-worker.js",
-    "static/css/main.f0a2b98e.chunk.css.map": "/The-Office-Quotes/static/css/main.f0a2b98e.chunk.css.map",
+    "static/css/main.53e90d4f.chunk.css.map": "/The-Office-Quotes/static/css/main.53e90d4f.chunk.css.map",
     "static/js/2.9dae4ff3.chunk.js.LICENSE.txt": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.LICENSE.txt",
     "static/media/Andy.png": "/The-Office-Quotes/static/media/Andy.b16d7003.png",
     "static/media/Angela.png": "/The-Office-Quotes/static/media/Angela.3eb0b2b6.png",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc1b65cc.js",
     "static/js/2.9dae4ff3.chunk.js",
-    "static/css/main.f0a2b98e.chunk.css",
+    "static/css/main.53e90d4f.chunk.css",
     "static/js/main.554c0f5f.chunk.js"
   ]
 }
