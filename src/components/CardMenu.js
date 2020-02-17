@@ -10,11 +10,21 @@ import ReactCardFlip from 'react-card-flip';
 import {ArrowLeft, ArrowRight} from './Arrow';
 
 export class CardMenu extends Component {
+    
     render(){
         if (this.props.quotes && this.props.images){
             return (
             <div id='menu'>
                 <ScrollMenu
+                    menuStyle={{
+                        margin: '0',
+                        position: 'absolute',
+                        top: '50%',
+                        '-ms-transform': 'translateY(-50%)',
+                        transform: 'translateY(-50%)',
+                        width: '100%',
+                        'white-space': 'nowrap'
+                    }}
                     data={this.getCards()}
                     arrowLeft={ArrowLeft}
                     arrowRight={ArrowRight}

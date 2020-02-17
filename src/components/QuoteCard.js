@@ -31,18 +31,19 @@ export default class QuoteCard extends Component {
                     <div className = "socialMedia">
                         <EmailShareButton
                             subject = 'The Office Quotes'
-                            body = {this.stripHtmlTags(this.state.current) + this.props.author}>
+                            body = {"\"" + this.stripHtmlTags(this.state.current) + "\"" + "    -" + this.props.author}>
                             <button className="button fa fa-envelope"></button>
                         </EmailShareButton>
                         <TwitterShareButton
+                            url = 'https://elijah1368.github.io/The-Office-Quotes/'
                             title = 'The Office Quotes'
-                            via = 'http://localhost:3000/'
+                            via = 'https://elijah1368.github.io/The-Office-Quotes/'
                             hashtags = '#TheOffice'>
                             <button className="button fa fa-twitter"></button>
                         </TwitterShareButton>
                         <FacebookShareButton 
-                            url='http://localhost:3000/'
-                            quote={this.stripHtmlTags(this.state.current) + this.props.author}
+                            url='https://elijah1368.github.io/The-Office-Quotes/'
+                            quote={"\"" + this.stripHtmlTags(this.state.current) + "\"" + " -" + this.props.author}
                             hashtag="#TheOffice">
                             <button className="button fa fa-facebook"></button>
                         </FacebookShareButton>

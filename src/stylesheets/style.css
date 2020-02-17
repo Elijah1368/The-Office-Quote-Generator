@@ -11,8 +11,8 @@ html, body {
 
 /*MENU CONTAINER*/
 
-
-#menu{
+/*
+.menu{
     margin: 0;
     position: absolute;
     top: 50%;
@@ -20,7 +20,7 @@ html, body {
     transform: translateY(-50%);
     width: 100%;
 }
-
+*/
 .scroll-menu-arrow {
     padding:5px;
     cursor: pointer;
@@ -50,6 +50,7 @@ html, body {
 }
 
 .quoteBox {
+    white-space: normal;
     text-align: left;
     font-size: 4vh;
     font-family: 'Raleway', sans-serif;
