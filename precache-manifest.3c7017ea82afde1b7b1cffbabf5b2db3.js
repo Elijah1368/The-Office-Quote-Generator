@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bed2c3e6931b00bad0bd4f58e2e00b83",
+    "revision": "451a0e6fe51f652ac82d1b9b62ef20fc",
     "url": "/The-Office-Quotes/index.html"
   },
   {
-    "revision": "7329899a2895817d2178",
+    "revision": "9018f70ac03d968c3fd5",
     "url": "/The-Office-Quotes/static/css/main.36cd724b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7329899a2895817d2178",
-    "url": "/The-Office-Quotes/static/js/main.55e447ba.chunk.js"
+    "revision": "9018f70ac03d968c3fd5",
+    "url": "/The-Office-Quotes/static/js/main.ef7e2695.chunk.js"
   },
   {
     "revision": "a00c8b9f6b1786f66917",
