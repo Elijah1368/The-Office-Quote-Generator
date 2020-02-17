@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The Office Quotes
 ---
-<img src="MichaelSkeet.png" width="60%" height="60%" />
+<img src="MichaelSkeet.jpg" width="60%" height="60%" />
 
 Office quotes organized to its characters so you can get your daily dose of Jim, Dwight, or Michael whenever you feel like it.
 
