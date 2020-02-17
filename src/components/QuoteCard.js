@@ -18,6 +18,7 @@ export default class QuoteCard extends Component {
     }
 
     render(){
+        let quote = "\"" + this.stripHtmlTags(this.state.current) + "\"" + "    -" + this.props.author;
         return ( 
         <div className={this.props.className}>
             <div className='quoteBox'>
@@ -31,19 +32,15 @@ export default class QuoteCard extends Component {
                     <div className = "socialMedia">
                         <EmailShareButton
                             subject = 'The Office Quotes'
-                            body = {"\"" + this.stripHtmlTags(this.state.current) + "\"" + "    -" + this.props.author}>
+                            body = {quote}>
                             <button className="button fa fa-envelope"></button>
                         </EmailShareButton>
-                        <TwitterShareButton
-                            url = 'https://elijah1368.github.io/The-Office-Quotes/'
-                            title = 'The Office Quotes'
-                            via = 'https://elijah1368.github.io/The-Office-Quotes/'
-                            hashtags = '#TheOffice'>
+                        <a href = {'https://twitter.com/intent/tweet?text=' + quote}>
                             <button className="button fa fa-twitter"></button>
-                        </TwitterShareButton>
+                        </a>
                         <FacebookShareButton 
                             url='https://elijah1368.github.io/The-Office-Quotes/'
-                            quote={"\"" + this.stripHtmlTags(this.state.current) + "\"" + " -" + this.props.author}
+                            quote={quote}
                             hashtag="#TheOffice">
                             <button className="button fa fa-facebook"></button>
                         </FacebookShareButton>
