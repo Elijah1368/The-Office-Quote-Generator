@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bcc892bff7b74d8133be7bd4aea10225",
+    "revision": "f4d56ef104a4bca081af3e0a826752b5",
     "url": "/The-Office-Quotes/index.html"
   },
   {
-    "revision": "5e4588fc035a5ee7ad24",
+    "revision": "fedd0b7f7c43e0bb74e0",
     "url": "/The-Office-Quotes/static/css/main.169a09d3.chunk.css"
   },
   {
-    "revision": "5350975d6c06c8f791e4",
-    "url": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js"
+    "revision": "73aa6cd5d9108a627155",
+    "url": "/The-Office-Quotes/static/js/2.2b18dd14.chunk.js"
   },
   {
     "revision": "52dfbeda0d8fcd66821ea0be571eb11e",
-    "url": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.LICENSE.txt"
+    "url": "/The-Office-Quotes/static/js/2.2b18dd14.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5e4588fc035a5ee7ad24",
-    "url": "/The-Office-Quotes/static/js/main.0e2812a2.chunk.js"
+    "revision": "fedd0b7f7c43e0bb74e0",
+    "url": "/The-Office-Quotes/static/js/main.a9595072.chunk.js"
   },
   {
     "revision": "a00c8b9f6b1786f66917",
