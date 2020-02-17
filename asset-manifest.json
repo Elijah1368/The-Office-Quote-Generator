@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/The-Office-Quotes/static/css/main.36cd724b.chunk.css",
-    "main.js": "/The-Office-Quotes/static/js/main.ef7e2695.chunk.js",
-    "main.js.map": "/The-Office-Quotes/static/js/main.ef7e2695.chunk.js.map",
+    "main.css": "/The-Office-Quotes/static/css/main.169a09d3.chunk.css",
+    "main.js": "/The-Office-Quotes/static/js/main.0e2812a2.chunk.js",
+    "main.js.map": "/The-Office-Quotes/static/js/main.0e2812a2.chunk.js.map",
     "runtime-main.js": "/The-Office-Quotes/static/js/runtime-main.bc1b65cc.js",
     "runtime-main.js.map": "/The-Office-Quotes/static/js/runtime-main.bc1b65cc.js.map",
     "static/js/2.9dae4ff3.chunk.js": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js",
     "static/js/2.9dae4ff3.chunk.js.map": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.map",
     "index.html": "/The-Office-Quotes/index.html",
-    "precache-manifest.3c7017ea82afde1b7b1cffbabf5b2db3.js": "/The-Office-Quotes/precache-manifest.3c7017ea82afde1b7b1cffbabf5b2db3.js",
+    "precache-manifest.31df09765bc699837c31f37ee6d2434a.js": "/The-Office-Quotes/precache-manifest.31df09765bc699837c31f37ee6d2434a.js",
     "service-worker.js": "/The-Office-Quotes/service-worker.js",
-    "static/css/main.36cd724b.chunk.css.map": "/The-Office-Quotes/static/css/main.36cd724b.chunk.css.map",
+    "static/css/main.169a09d3.chunk.css.map": "/The-Office-Quotes/static/css/main.169a09d3.chunk.css.map",
     "static/js/2.9dae4ff3.chunk.js.LICENSE.txt": "/The-Office-Quotes/static/js/2.9dae4ff3.chunk.js.LICENSE.txt",
     "static/media/Andy.png": "/The-Office-Quotes/static/media/Andy.b16d7003.png",
     "static/media/Angela.png": "/The-Office-Quotes/static/media/Angela.3eb0b2b6.png",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc1b65cc.js",
     "static/js/2.9dae4ff3.chunk.js",
-    "static/css/main.36cd724b.chunk.css",
-    "static/js/main.ef7e2695.chunk.js"
+    "static/css/main.169a09d3.chunk.css",
+    "static/js/main.0e2812a2.chunk.js"
   ]
 }
