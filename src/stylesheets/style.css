@@ -71,11 +71,7 @@ html, body {
 
 .buttons{
     display: flex;
-    position: fixed;
-    bottom: 6%;
-    left: 5%;
-    right: 5%;
-    justify-content: space-around;
+
     
 }
 
@@ -95,6 +91,7 @@ html, body {
 
 .newQuote {
     font-family: 'Raleway', sans-serif;
+    margin-left: 30px;
 }
 
 @media (max-aspect-ratio: 11/12){
