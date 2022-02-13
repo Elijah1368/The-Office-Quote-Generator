@@ -2,6 +2,7 @@ The Office Quotes
 ---
 
 Click the image to try it!
+
 <a href="https://elijah1368.github.io/The-Office-Quotes">
     <img src="./public/assets/MichaelSkeet.jpg" width="60%" height="60%" />
 </a>
